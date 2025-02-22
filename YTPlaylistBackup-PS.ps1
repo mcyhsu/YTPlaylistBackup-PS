@@ -1,7 +1,7 @@
 $apiKey = "api-key-here"
 
 # Add the playlist IDs you want to back up to this array
-$playlistIds = @("playlistID-here-1","playlistID-here-2","playlistID-here-3")
+$playlistIds = @("playlistId-here-1","playlistId-here-2","playlistId-here-3")
 
 # Make sure the playlists are public or unlisted, as private playlists will not be accessible
 # Include only the playlist ID, not the full URL
@@ -83,7 +83,7 @@ foreach($playlistId in $playlistIds) {
     $outputPath = $destination + $filename
 
     # Export the formatted video list to a CSV file 
-    $formattedVideoList | Export-Csv -Path $outputPath -NoTypeInformation
+    $formattedVideoList | Export-Csv -Path $outputPath -NoTypeInformation -Encoding UTF8BOM
 
     # Check for how many deleted or private videos are in the playlist and warns user
     $inaccessibleVideoCounter = 0
