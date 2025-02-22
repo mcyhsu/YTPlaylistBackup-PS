@@ -24,7 +24,7 @@ foreach($playlistId in $playlistIds) {
     }
 
     # Store JSON response to parse later
-    $videoList = $response.items
+    $videoList = $null
 
     # Initialize the nextPageToken
     $nextPageToken = $null
@@ -46,7 +46,7 @@ foreach($playlistId in $playlistIds) {
             $nextPageToken = $response.nextPageToken
         }
 
-    } while($nextPageToken) # Once $nextPageToken is null, the loop will stop
+    } while($nextPageToken) # Once $response.nextPageToken is null, the loop will stop
 
     # Initialize an empty array to store the formatted video information
     $formattedVideoList = @()
