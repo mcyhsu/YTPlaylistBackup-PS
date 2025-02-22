@@ -1,7 +1,7 @@
 $apiKey = "api-key-here"
 
 # Add the playlist IDs you want to back up to this array
-$playlistIds = @("playlistId-here-1","playlistId-here-2","playlistId-here-3")
+$playlistIds = @("playlistID-here-1","playlistID-here-2","playlistID-here-3")
 
 # Make sure the playlists are public or unlisted, as private playlists will not be accessible
 # Include only the playlist ID, not the full URL
@@ -24,10 +24,10 @@ foreach($playlistId in $playlistIds) {
     }
 
     # Store JSON response to parse later
-    $videoList = $null
+    $videoList = $response.items
 
     # Initialize the nextPageToken
-    $nextPageToken = $null
+    $nextPageToken = $response.nextPageToken
 
     do {
         # If there is a nextPageToken in the API call, get the next page of results
@@ -99,5 +99,5 @@ foreach($playlistId in $playlistIds) {
     } elseif($inaccessibleVideoCounter -gt 1) {
         Write-Host "There are $inaccessibleVideoCounter deleted or private videos in the playlist $playlistTitle." -ForegroundColor Yellow
     }
-
+    Write-Host "The operation was successfully completed. The playlist details for $playlistTitle were saved to $destination." -ForegroundColor Green
 }
