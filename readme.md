@@ -16,6 +16,8 @@ To get started, you need to know three things:
 
 If you already know them, simply modify the variables at the top of the script and run the script to save the playlist data as CSVs to the destination folder.
 
+![](https://github.com/mcyhsu/YTPlaylistBackup-PS/blob/main/Assets/change-these-values.jpg?raw=true)
+
 Otherwise, I'll explain where you can find each of these things next.
 
 ## 1. YouTube API Key
@@ -56,3 +58,7 @@ $destination = "c:/path/to/destination/"
 This is where the script will save your CSV files. It will create one CSV per playlist.
 
 So if you entered 3 playlist IDs, expect to see 3 CSVs saved into that folder when you run the script.
+
+![](https://github.com/mcyhsu/YTPlaylistBackup-PS/blob/main/Assets/csv-files.jpg?raw=true)
+
+Pictured: Three CSVs after running the script. And that's it!
