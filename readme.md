@@ -45,7 +45,7 @@ From the URL, omit the "https://www.youtube.com/playlist?list=" part.
 ```
 PLtDp75hOzOlbD7m-Gb2t4dZqyYx7dq0iB
 ```
-Change the placeholder values in **$playlistIds**. Enter at least one playlist ID, like so:
+Change the placeholder values in **$playlistIds**. Enter at least one playlist ID, separate with a comma if you have multiple IDs, like so:
 ```
 $playlistIds = @("PLtDp75hOzOlbD7m-Gb2t4dZqyYx7dq0iB","PL5075BB69F757047E")
 ```
