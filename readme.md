@@ -1,10 +1,20 @@
+# YouTube Playlist Backup Script
+
+## The Problem
+
+If you've ever tried maintaining a large music playlist on YouTube, then you've probably been greeted to this sight:
+
+![]()
+
+While this script cannot prevent videos from getting deleted, it can at least make the process of replacing the deleted videos a lot easier.
+
 ## What Does This Script Do?
 
-**It saves the Title, Uploader, Description, and URL information of each video in a playlist into a CSV file for archival purposes.**
+The YouTube Playlist Backup script **saves the Title, Uploader, Description, and URL information of each video in a YouTube playlist into a CSV file** for archival purposes.
 
-This is useful for maintaining a playlist when videos get deleted or set to private and you don't know which ones. 
+This is useful for maintaining a music playlist when videos get deleted or set to private and you don't know which ones. 
 
-Now you can just check the CSV file and replace the inaccessible videos. Then run the script again to generate fresh CSVs.
+Preserve the playlist data just as it was before videos got removed - you can  check the CSV file(s) and replace the inaccessible videos and run the script again to generate fresh CSVs.
 
 ## How to Use This Script
 Open the script in your preferred environment (E.g. VS Code).
