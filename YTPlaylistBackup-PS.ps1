@@ -1,16 +1,28 @@
+# Description: A PowerShell script to back up YouTube playlist details to CSV files
+
+###############################  ENTER YOUR DETAILS HERE  ###############################
+
+# Enter your YouTube Data API key here
+# Get your API key from the Google Cloud Console: https://console.developers.google.com/
+# Make sure the YouTube Data API v3 is enabled for your project
 $apiKey = "api-key-here"
 
 # Add the playlist IDs you want to back up to this array
-$playlistIds = @("playlistID-here-1","playlistID-here-2","playlistID-here-3")
-
 # Make sure the playlists are public or unlisted, as private playlists will not be accessible
 # Include only the playlist ID, not the full URL
+$playlistIds = @("playlistID-here-1", "playlistID-here-2", "playlistID-here-3")
 
-# Modify the destination path to the folder you want to save the CSV file, don't include the filename
+
+# Modify the destination path to the folder you want to save the CSV file and don't include the filename
 $destination = "/path/to/destination/"
+
+###############################  ENTER YOUR DETAILS HERE  ###############################
 
 # Max per request (YouTube limit)
 $maxResults = 50  
+
+# Initialize a generic counter to use in case of empty or invalid playlist titles
+$genericCounter = 1
 
 foreach($playlistId in $playlistIds) {
     $url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=$maxResults&playlistId=$playlistId&key=$apiKey"
@@ -77,8 +89,17 @@ foreach($playlistId in $playlistIds) {
     # Get the current date and time
     $currentDateTime = Get-Date -Format "yyyy-MM-dd-HH-mm"
 
+    # Sanitize the playlist title by removing invalid characters
+    $sanitizedTitle = $playlistTitle -replace '[<>:"/\\|?*\[\]]', ''
+
+    # If the sanitized title is empty or invalid, use a generic name
+    if ([string]::IsNullOrWhiteSpace($sanitizedTitle)) {
+        $sanitizedTitle = "playlist$genericCounter"
+        $genericCounter++
+    }
+
     # Set the filename with the playlist title and current date and time
-    $filename = "$playlistTitle-$currentDateTime.csv"
+    $filename = "$sanitizedTitle-$currentDateTime.csv"
 
     $outputPath = $destination + $filename
 

@@ -55,7 +55,7 @@ From the URL, omit the "https://www.youtube.com/playlist?list=" part.
 ```
 PLtDp75hOzOlbD7m-Gb2t4dZqyYx7dq0iB
 ```
-Change the placeholder values in **$playlistIds**. Enter at least one playlist ID, like so:
+Change the placeholder values in **$playlistIds**. Enter at least one playlist ID, separate with a comma if you have multiple IDs, like so:
 ```
 $playlistIds = @("PLtDp75hOzOlbD7m-Gb2t4dZqyYx7dq0iB","PL5075BB69F757047E")
 ```
@@ -71,4 +71,8 @@ So if you entered 3 playlist IDs, expect to see 3 CSVs saved into that folder wh
 
 ![](https://github.com/mcyhsu/YTPlaylistBackup-PS/blob/main/Assets/csv-files.jpg?raw=true)
 
-Pictured: Three CSVs after running the script. And that's it!
+And here's how it's formatted inside:
+
+![](https://github.com/mcyhsu/YTPlaylistBackup-PS/blob/main/Assets/inside-csv.png?raw=true)
+
+And that's it!
