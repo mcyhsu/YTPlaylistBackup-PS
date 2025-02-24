@@ -1,6 +1,6 @@
 # YouTube Playlist Backup Script - PowerShell
 
-## The Problem
+## What Problem Does This Script Solve?
 
 If you've ever maintained a large music playlist on YouTube, you've probably encountered this horrific sight:
 
