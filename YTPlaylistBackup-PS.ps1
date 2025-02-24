@@ -1,13 +1,22 @@
+# Description: A PowerShell script to back up YouTube playlist details to CSV files
+
+###############################  ENTER YOUR DETAILS HERE  ###############################
+
+# Enter your YouTube Data API key here
+# Get your API key from the Google Cloud Console: https://console.developers.google.com/
+# Make sure the YouTube Data API v3 is enabled for your project
 $apiKey = "api-key-here"
 
 # Add the playlist IDs you want to back up to this array
-$playlistIds = @("playlistID-here-1", "playlistID-here-2", "playlistID-here-3")
-
 # Make sure the playlists are public or unlisted, as private playlists will not be accessible
 # Include only the playlist ID, not the full URL
+$playlistIds = @("playlistID-here-1", "playlistID-here-2", "playlistID-here-3")
 
-# Modify the destination path to the folder you want to save the CSV file, don't include the filename
+
+# Modify the destination path to the folder you want to save the CSV file and don't include the filename
 $destination = "/path/to/destination/"
+
+###############################  ENTER YOUR DETAILS HERE  ###############################
 
 # Max per request (YouTube limit)
 $maxResults = 50  
